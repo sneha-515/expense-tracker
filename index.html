@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="page" id="login-page">
+        <div class="container">
+            <h1>Expense Tracker</h1>
+            <div class="form-container">
+                <h2>Login</h2>
+                
+                <div id="login-alert" class="alert" style="display: none;"></div>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">Username:</label>
+                        <input type="text" id="login-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <p class="form-link">Don't have an account? <a href="#" id="go-to-register">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Page -->
+    <div class="page" id="register-page">
+        <div class="container">
+            <h1>Expense Tracker</h1>
+            <div class="form-container">
+                <h2>Register</h2>
+                
+                <div id="register-alert" class="alert" style="display: none;"></div>
+                
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-username">Username:</label>
+                        <input type="text" id="register-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+                <p class="form-link">Already have an account? <a href="#" id="go-to-login">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div class="page" id="dashboard-page">
+        <div class="container">
+            <div class="header">
+                <h1>Expense Tracker</h1>
+                <div class="user-info">
+                    <span id="welcome-message">Welcome, User</span>
+                    <a href="#" id="logout-btn" class="btn btn-logout">Logout</a>
+                </div>
+            </div>
+            
+            <div id="dashboard-alert" class="alert" style="display: none;"></div>
+            
+            <!-- Income Section -->
+            <div class="section">
+                <h2>Income</h2>
+                <form id="income-form">
+                    <div class="form-group">
+                        <label for="incomeDescription">Description:</label>
+                        <input type="text" id="incomeDescription" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="incomeAmount">Amount:</label>
+                        <input type="number" id="incomeAmount" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Add Income</button>
+                </form>
+            </div>
+            
+            <!-- Expenses Section -->
+            <div class="section">
+                <h2>Expenses</h2>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="expenseDescription">Description:</label>
+                        <input type="text" id="expenseDescription" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseCategory">Category:</label>
+                        <select id="expenseCategory">
+                            <option value="housing">Housing</option>
+                            <option value="food">Food</option>
+                            <option value="transport">Transport</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount">Amount:</label>
+                        <input type="number" id="expenseAmount" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Add Expense</button>
+                </form>
+            </div>
+            
+            <!-- Budget Summary Section -->
+            <div class="section">
+                <h2>Budget Summary</h2>
+                <div class="budget-summary">
+                    <p>Total Income: $<span id="total-income">0.00</span></p>
+                    <p>Total Expense: $<span id="total-expense">0.00</span></p>
+                    <p>Balance: $<span id="balance" class="positive">0.00</span></p>
+                </div>
+            </div>
+            
+            <!-- Transaction History Section -->
+            <div class="section">
+                <h2>Transaction History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list">
+                        <!-- Transactions will be inserted here -->
+                    </tbody>
+                </table>
+                
+                <button id="clear-all" class="btn btn-warning">Clear All Transactions</button>
+            </div>
+        </div>
+    </div>
+ <script src="./script.js"></script>
+</body>
+</html>
